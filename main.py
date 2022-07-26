@@ -2,6 +2,11 @@ import PySimpleGUI as sg
 from pyunpack import Archive
 import os
 
+tipos = list()
+with open('formatos.txt', 'r') as file:    
+    tipos.append(file.read().split(','))
+
+
 def descompactar(filename, directory):
     try:
         Archive(filename).extractall(directory)
@@ -15,9 +20,11 @@ sg.theme('Reddit')
 
 layout = [
     [sg.Stretch(), sg.Image(image, size=(130, 130)), sg.Stretch()],
-    [sg.Stretch(), sg.Button('Abrir Arquivo', size = (12, 3)), sg.Stretch()],
-    [sg.Stretch(), sg.Button('Cancelar', size = (12, 3)), sg.Stretch()],
-    ]
+    [sg.Stretch(), sg.Button('Abrir Arquivo', font=('Verdana', 16), size = (12, 3)), sg.Stretch()],
+    [sg.Stretch(), sg.Button('Cancelar', font=('Verdana', 16), size = (12, 3)), sg.Stretch()],
+    [sg.Stretch(), sg.Text(f'Formatos Suportados:'),
+     sg.Listbox(tipos[0], size=(15, 3)), sg.Stretch()]]
+
 
 window = sg.Window('Descompactador Universal', layout, resizable=True)
 
