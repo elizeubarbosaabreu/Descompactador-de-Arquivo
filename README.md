@@ -43,13 +43,10 @@ No linux dá para usar um link que aponta para o executável python dentro da pa
 Exemplo: 
 
 ~~~
-<path>/Descompactador-de-Arquivo/.venv/bin/python3 '<path>/Descompactador-de-Arquivo/Descompactador-de-Arquivo/main.py'
+path/Descompactador-de-Arquivo/.venv/bin/python3 'path/Descompactador-de-Arquivo/Descompactador-de-Arquivo/main.py'
 ~~~
 
-Onde ~~~
-path
-~~~ 
-deve ser substituído pelo caminho onde o arquivo está. Isso varia pois depende de onde você salvou o arquivo.
+Onde o trecho **path** deve ser substituído pelo caminho onde o arquivo está. Isso varia pois depende de onde você salvou o arquivo.
 
 Outra opção (válida para todos os Sistemas Operacionais) é converter o código fonte python em executável utilizando o [pyinstaller](https://pypi.org/project/pyinstaller/).
 
