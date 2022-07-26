@@ -3,7 +3,13 @@ from pyunpack import Archive
 import os
 
 tipos = list()
-with open('formatos.txt', 'r') as file:    
+
+path = os.path.dirname(os.path.realpath(__file__))
+textoComFormatos = f'formatos.txt'
+
+formatos = os.path.join(path,textoComFormatos)
+
+with open(formatos, 'r') as file:    
     tipos.append(file.read().split(','))
 
 
